@@ -1,0 +1,1269 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #2a4c7c;
+    --secondary-color: #5489aa;
+    --accent-color: #3f779a;
+    --light-bg: #f3f4f7;
+    --card-bg: #ffffff;
+    --gradient-start: #d3dde7;
+    --gradient-end: #b4d0e9;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--light-bg);
+    color: #333;
+    line-height: 1.6;
+    padding-top: 0;
+    margin: 0;
+}
+
+/* ===== ШАПКА (как на главной) ===== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, rgba(211, 220, 232, 0.95), rgba(177, 191, 210, 0.95));
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #B0C4DE;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.site-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #2f6486;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.site-title:hover {
+    opacity: 0.9;
+}
+
+/* Кнопка гамбургера */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.burger-menu span {
+    width: 100%;
+    height: 3px;
+    background-color: #2f6486;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.burger-menu.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.burger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+.nav {
+    display: flex;
+    gap: 25px;
+}
+
+.nav a {
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    color: #5489aa;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav a:hover,
+.nav a.active {
+    background: rgba(16, 47, 79, 0.15);
+    color: #1a3d5c;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Оверлей */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ===== ГЕРОЙ СЕКЦИЯ ===== */
+.header-image {
+    position: relative;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 0;
+    margin-top: 0;
+    overflow: hidden;
+}
+
+.header-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img-p/sports.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+}
+
+.header-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(247, 251, 255, 0.4), rgba(161, 209, 239, 0.3));
+    z-index: 1;
+}
+
+/* ===== ЗАГОЛОВОК СТРАНИЦЫ ===== */
+.page-title {
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    font-size: 45px;
+    font-weight: 700;
+    color: #2a4c7c;
+    margin: 25px 0;
+    z-index: 2;
+}
+
+/* ===== ОСНОВНОЙ ТЕКСТОВЫЙ БЛОК ===== */
+.principle-section {
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 20px auto;
+    background-color: rgba(42, 144, 255, 0.05);
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    font-size: 18px;
+    line-height: 1.7;
+    color: #333;
+    border: 1px solid rgba(42, 76, 124, 0.1);
+    font-weight: 400;
+}
+
+/* ===== ЗАГОЛОВКИ РАЗДЕЛОВ ===== */
+.section-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #2a4c7c;
+    position: relative;
+    padding-bottom: 1rem;
+    margin-bottom: 30px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+/* ===== КАРТОЧКИ ПОЛЬЗЫ СПОРТА ===== */
+.sport-benefits {
+    background-color: #f8fafc;
+    border-radius: 30px;
+    padding: 4rem 0;
+    margin: 2rem 0;
+}
+
+.benefit-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    height: 100%;
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    border-color: var(--accent-color);
+}
+
+.benefit-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.benefit-card:hover .benefit-icon {
+    transform: scale(1.1);
+}
+
+.benefit-card h4 {
+    font-family: 'Roboto', sans-serif;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.benefit-card p {
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+/* ===== ПЛАН НА НЕДЕЛЮ И МОТИВАЦИЯ ===== */
+.weekly-plan,
+.motivation-section {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    height: 100%;
+}
+
+.plan-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    color: #2a4c7c;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eaeaea;
+    font-weight: 600;
+}
+
+.calendar-grid {
+    display: grid;
+    gap: 12px;
+}
+
+.calendar-day {
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    padding: 18px;
+    transition: all 0.2s ease;
+    background: #fdfdfd;
+}
+
+.calendar-day:hover {
+    border-color: #d0d7e2;
+    background: #f8fafc;
+    transform: translateY(-2px);
+}
+
+.day-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.day-name {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    color: #2a4c7c;
+    font-size: 1.1rem;
+}
+
+.day-activity {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.day-duration {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.day-link {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: #3f779a;
+    text-decoration: none;
+    padding: 6px 0;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.day-link:hover {
+    color: #2a4c7c;
+    border-bottom-color: #2a4c7c;
+}
+
+.day-rest {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: #888;
+    font-style: italic;
+    padding: 6px 0;
+}
+
+.motivation-cards {
+    display: grid;
+    gap: 15px;
+}
+
+.motivation-card {
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.2s ease;
+    background: #fdfdfd;
+}
+
+.motivation-card:hover {
+    border-color: #d0d7e2;
+    background: #f8fafc;
+}
+
+.motivation-header {
+    margin-bottom: 12px;
+}
+
+.motivation-card h5 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    color: #2a4c7c;
+    margin: 0;
+    font-weight: 600;
+}
+
+.motivation-card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+    margin: 0;
+    font-weight: 400;
+}
+
+/* ===== КАРТОЧКИ ВИДОВ АКТИВНОСТИ ===== */
+.activity-card {
+    position: relative;
+    height: 280px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+@media (min-width: 769px) {
+    .activity-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+    
+    .activity-card:hover .card-front {
+        opacity: 0;
+        visibility: hidden;
+    }
+    
+    .activity-card:hover .card-back {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+
+.activity-card.active {
+    transform: translateY(-5px);
+}
+
+.activity-card.active .card-front {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.activity-card.active .card-back {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.card-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    transition: all 0.4s ease;
+    z-index: 2;
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+}
+
+.cardio-icon {
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    color: #1565c0;
+}
+
+.strength-icon {
+    background: linear-gradient(135deg, #ffebee, #ffcdd2);
+    color: #c62828;
+}
+
+.flex-icon {
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    color: #2e7d32;
+}
+
+.balance-icon {
+    background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+    color: #6a1b9a;
+}
+
+.card-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #2a4c7c;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.card-description {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+.card-hint {
+    font-size: 0.85rem;
+    color: #888;
+    opacity: 0.8;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    background: white;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+    z-index: 1;
+    overflow-y: auto;
+}
+
+.details-content h4 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    color: #2a4c7c;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #eaeaea;
+    font-weight: 600;
+}
+
+.details-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.details-content li {
+    padding: 8px 0;
+    color: #555;
+    font-size: 0.95rem;
+    border-bottom: 1px dashed #eee;
+    position: relative;
+    padding-left: 22px;
+    font-weight: 400;
+}
+
+.details-content li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.details-info {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    font-weight: 600;
+    color: #2a4c7c;
+    font-size: 0.9rem;
+}
+
+.info-value {
+    color: #555;
+    font-size: 0.9rem;
+    text-align: right;
+    max-width: 60%;
+    font-weight: 400;
+}
+
+/* ===== ТАБЛИЦА ТРЕНИРОВОК ===== */
+.training-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    background: white;
+}
+
+.table-header {
+    background: linear-gradient(135deg, #2a4c7c, #3f779a);
+}
+
+.table-header th {
+    color: white;
+    border: none;
+    padding: 1.5rem 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.level-col {
+    width: 180px;
+}
+
+.beginner-level {
+    background: linear-gradient(to right, rgba(232, 245, 233, 0.3), rgba(255, 255, 255, 0.1));
+    transition: all 0.3s ease;
+}
+
+.intermediate-level {
+    background: linear-gradient(to right, rgba(227, 242, 253, 0.3), rgba(255, 255, 255, 0.1));
+    transition: all 0.3s ease;
+}
+
+.advanced-level {
+    background: linear-gradient(to right, rgba(255, 243, 224, 0.3), rgba(255, 255, 255, 0.1));
+    transition: all 0.3s ease;
+}
+
+.training-table tbody tr:hover {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.level-cell {
+    padding: 1.5rem 1rem;
+    border-right: 2px solid #f0f0f0;
+}
+
+.level-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.level-icon {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+.level-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    color: #2a4c7c;
+    margin: 0;
+    font-weight: 600;
+}
+
+.difficulty {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+}
+
+.difficulty-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    display: inline-block;
+}
+
+.difficulty-dot.easy {
+    background: #4CAF50;
+}
+
+.difficulty-dot.medium {
+    background: #2196F3;
+}
+
+.difficulty-dot.hard {
+    background: #f44336;
+}
+
+.training-cell {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.video-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    padding: 15px;
+}
+
+.video-info h6 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: #2a4c7c;
+    margin-bottom: 5px;
+    line-height: 1.3;
+    font-weight: 600;
+}
+
+.video-info p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    font-weight: 400;
+}
+
+.video-meta {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.duration {
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* ===== КЛЮЧЕВЫЕ ПРАВИЛА ===== */
+.rule-card {
+    background: linear-gradient(135deg, #e8f4fd, #f0f8ff);
+    border-radius: 16px;
+    padding: 30px 25px;
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.08);
+    border-top: 4px solid #4a90e2;
+    border-left: 1px solid rgba(74, 144, 226, 0.1);
+    border-right: 1px solid rgba(74, 144, 226, 0.1);
+    border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.rule-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(74, 144, 226, 0.15);
+    background: linear-gradient(135deg, #d9ecfc, #e8f4fd);
+    border-top: 4px solid #357ae8;
+}
+
+.rule-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3rem;
+    color: #2a4c7c;
+    margin-bottom: 15px;
+    font-weight: 600;
+    line-height: 1.3;
+    position: relative;
+    z-index: 2;
+}
+
+.rule-text {
+    color: #444;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+    font-weight: 400;
+}
+
+/* ===== ССЫЛКИ НА ВИДЕО ===== */
+.video-link,
+.details-link,
+.rule-link,
+.video-link-sm,
+.video-caption-link {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 6px 12px;
+    background-color: rgba(84, 137, 170, 0.15);
+    color: #2a4c7c;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.video-link:hover,
+.details-link:hover,
+.rule-link:hover,
+.video-link-sm:hover,
+.video-caption-link:hover {
+    background-color: rgba(84, 137, 170, 0.3);
+    transform: translateY(-2px);
+}
+
+.video-link-sm {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    margin-top: 8px;
+}
+
+.video-caption-link {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+/* ===== ВИДЕО КАРУСЕЛЬ ===== */
+#videoCarousel {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.video-container {
+    background: #000;
+    position: relative;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-container video {
+    max-height: 100%;
+    object-fit: contain;
+    background: #000;
+}
+
+.video-caption {
+    background: white;
+    padding: 20px 25px;
+    text-align: center;
+    border-top: 1px solid #f0f0f0;
+}
+
+.video-caption h5 {
+    font-family: 'Roboto', sans-serif;
+    color: #2a4c7c;
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.video-caption p {
+    color: #666;
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    top: calc(50% - 25px);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.carousel-control-prev {
+    left: 20px;
+}
+
+.carousel-control-next {
+    right: 20px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background: white;
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* ===== ФУТЕР ===== */
+.site-footer {
+    background-color: #e6f0ff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1rem;
+    color: #666;
+}
+
+.site-footer a {
+    color: #3f779a;
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    color: #5f7080;
+}
+
+/* ========== АДАПТИВНОСТЬ ========== */
+
+/* Планшеты и меньше (до 768px) - бургер-меню */
+@media (max-width: 768px) {
+    .burger-menu {
+        display: flex;
+    }
+
+    .nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: linear-gradient(135deg, rgba(211, 220, 232, 0.98), rgba(177, 191, 210, 0.98));
+        backdrop-filter: blur(10px);
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out;
+        border-radius: 0 0 15px 15px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav.active {
+        max-height: 500px;
+        padding: 15px 0;
+    }
+
+    .nav a {
+        display: block;
+        padding: 12px 20px;
+        text-align: center;
+        border-radius: 0;
+        font-size: 16px;
+        border-bottom: 1px solid rgba(47, 100, 134, 0.2);
+    }
+
+    .nav a:last-child {
+        border-bottom: none;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+        transform: none;
+        background: rgba(16, 47, 79, 0.25);
+        box-shadow: none;
+    }
+
+    .site-title {
+        font-size: 22px;
+    }
+
+    .logo {
+        width: 42px;
+        height: 42px;
+    }
+
+    .header {
+        padding: 12px 15px;
+    }
+
+    .header-image {
+        height: 250px;
+    }
+    
+    .page-title {
+        font-size: 36px;
+        margin: 20px 0;
+    }
+    
+    .principle-section {
+        padding: 25px 30px;
+        font-size: 17px;
+        margin: 15px auto;
+    }
+    
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+    
+    .video-container {
+        height: 400px;
+    }
+    
+    .activity-card {
+        height: 280px;
+    }
+    
+    .training-table {
+        display: block;
+    }
+    
+    .training-table thead {
+        display: none;
+    }
+    
+    .training-table tbody,
+    .training-table tr,
+    .training-table td {
+        display: block;
+        width: 100%;
+    }
+    
+    .training-table tr {
+        margin-bottom: 2rem;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+    
+    .level-cell {
+        border-right: none;
+        border-bottom: 2px solid #f0f0f0;
+        background: rgba(42, 76, 124, 0.05);
+        padding: 1.5rem;
+    }
+    
+    .training-cell {
+        border-right: none;
+        border-bottom: 1px solid #f0f0f0;
+        padding: 1.2rem;
+    }
+    
+    .training-cell:last-child {
+        border-bottom: none;
+    }
+    
+    .level-info {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .level-icon {
+        margin-bottom: 0;
+        font-size: 2rem;
+    }
+    
+    .video-link,
+    .details-link,
+    .rule-link {
+        font-size: 0.75rem;
+        padding: 5px 10px;
+    }
+    
+    .video-caption-link {
+        font-size: 0.8rem;
+    }
+}
+
+/* Телефоны (до 480px) */
+@media (max-width: 480px) {
+    .site-title {
+        font-size: 18px;
+    }
+
+    .logo {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .header-image {
+        height: 200px;
+    }
+    
+    .page-title {
+        font-size: 28px;
+        margin: 15px 0;
+    }
+    
+    .principle-section {
+        padding: 18px 20px;
+        font-size: 15px;
+        margin: 10px auto;
+    }
+    
+    .section-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    
+    .sport-benefits {
+        padding: 2rem 0;
+        margin: 1rem 0;
+    }
+    
+    .benefit-card {
+        padding: 1.5rem;
+    }
+    
+    .benefit-card h4 {
+        font-size: 1.3rem;
+    }
+    
+    .weekly-plan,
+    .motivation-section {
+        padding: 20px;
+    }
+    
+    .plan-title {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+    
+    .calendar-day {
+        padding: 14px;
+    }
+    
+    .day-name {
+        font-size: 1rem;
+    }
+    
+    .motivation-card {
+        padding: 16px;
+    }
+    
+    .motivation-card h5 {
+        font-size: 1rem;
+    }
+    
+    .motivation-card p {
+        font-size: 0.9rem;
+    }
+    
+    .activity-card {
+        height: 300px;
+    }
+    
+    .card-front, .card-back {
+        padding: 18px;
+    }
+    
+    .card-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+        margin-bottom: 12px;
+    }
+    
+    .card-title {
+        font-size: 1.2rem;
+    }
+    
+    .card-description {
+        font-size: 0.9rem;
+    }
+    
+    .card-hint {
+        display: none;
+    }
+    
+    .details-content h4 {
+        font-size: 1.1rem;
+    }
+    
+    .details-content li {
+        font-size: 0.85rem;
+        padding: 6px 0 6px 20px;
+    }
+    
+    .info-label,
+    .info-value {
+        font-size: 0.8rem;
+    }
+    
+    .rule-card {
+        padding: 20px 18px;
+    }
+    
+    .rule-title {
+        font-size: 1.2rem;
+    }
+    
+    .rule-text {
+        font-size: 0.9rem;
+    }
+    
+    .video-container {
+        height: 300px;
+    }
+    
+    .video-caption {
+        padding: 15px 18px;
+    }
+    
+    .video-caption h5 {
+        font-size: 1.1rem;
+    }
+    
+    .video-caption p {
+        font-size: 0.9rem;
+    }
+    
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .level-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .video-preview {
+        flex-direction: column;
+        text-align: center;
+        padding: 12px;
+    }
+    
+    .video-info h6 {
+        font-size: 0.9rem;
+    }
+    
+    .video-info p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Планшеты (до 992px) - адаптация контента */
+@media (max-width: 992px) {
+    .page-title {
+        font-size: 32px;
+    }
+    
+    .principle-section {
+        font-size: 16px;
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .video-container {
+        height: 400px;
+    }
+    
+    .activity-card {
+        height: 280px;
+    }
+}

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Питание — Здоровый образ жизни</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="img/logo.jpg" alt="Логотип" class="logo">
+            </a>
+            <a href="index.html" class="site-title">Жить здорово</a>
+        </div>
+        <button class="burger-menu" id="burgerMenu" aria-label="Меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="nav" id="navLinks">
+            <a href="index.html">Главная</a>
+            <a href="pitanie.html" class="active">Питание</a>
+            <a href="water.html">Вода и гидробаланс</a>
+            <a href="psychology.html">Психология</a>
+            <a href="activnost.html">Физическая активность</a>
+        </nav>
+    </header>
+
+    <div class="header-space"></div>
+
+    <section class="header-image"></section>
+
+    <main class="container mb-5">
+        <section class="text-center mb-5">
+            <h1 class="display-4 fw-bold page-title">Правильное питание</h1>
+        </section>
+
+        <p class="lead principle-section mt-3">
+            Правильное питание — это не просто набор правил и ограничений. Это философия заботы о себе, о своём теле и
+            разуме. Оно формирует фундамент для энергии, продуктивности и гармонии, позволяя человеку ощущать радость
+            жизни в каждом дне. Современные исследования показывают, что качество питания напрямую влияет на когнитивные
+            функции, эмоциональное состояние и способность организма противостоять стрессу и болезням.
+            Сегодня, в эпоху информационного потока и глобальных маркетинговых кампаний, легко запутаться и поддаться
+            модным диетам или «чудодейственным» продуктам. Научно доказано, что такие эксперименты могут нанести
+            серьёзный вред организму.
+            Мы подробно рассмотрим стратегии планирования рациона на неделю. Кроме того, мы предложим простые и практичные рекомендации, которые не требуют тратить
+            много времени или средств: как составить удобный план питания, какие продукты всегда иметь под рукой, и как
+            сохранять разнообразие блюд без лишнего стресса.
+            Особое внимание уделяется осознанному подходу к питанию. Умение слушать свои ощущения голода и сытости,
+            выбирать продукты, которые действительно приносят пользу организму, и сочетать их так, чтобы получать
+            максимум энергии и удовольствия, — вот ключ к долгосрочному успеху. Наш сайт также даст советы, как
+            организовать рацион для разных целей: поддержание здоровья, снижение веса, набор мышечной массы или
+            повышение выносливости.
+        </p>
+
+        <section class="mb-5">
+            <h2 class="section-title page-title replace-text">Общие принципы питания</h2>
+            <div class="accordion" id="principlesAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#p1">
+                            1. Регулярность питания
+                        </button>
+                    </h2>
+                    <div id="p1" class="accordion-collapse collapse show" data-bs-parent="#principlesAccordion">
+                        <div class="accordion-body">
+                            Единого расписания, идеально подходящего для всех, не существует, но в среднем рекомендуется
+                            есть 3-5 раз в день. Это может быть, например, такой график: первый завтрак, второй завтрак,
+                            обед, полдник и ужин, или «сокращенный вариант» из трех приемов пищи в день. Попробуйте
+                            найти то количество «подходов», которое оптимально именно для вас. Реже двух раз в сутки
+                            врачи есть, как правило, не рекомендуют, а оптимальным обычно называют четырехразовое
+                            питание. Приёмы пищи каждые 3–4 часа поддерживают стабильный уровень сахара и предотвращают
+                            переедание.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#p2">
+                            2. Баланс нутриентов
+                        </button>
+                    </h2>
+                    <div id="p2" class="accordion-collapse collapse" data-bs-parent="#principlesAccordion">
+                        <div class="accordion-body">
+                            Оптимальное сочетание белков, жиров и углеводов обеспечивает полноценную работу всех систем
+                            организма. Включение широкого спектра натуральных и минимально обработанных продуктов
+                            (овощей, фруктов, цельнозерновых культур, источников белка и полезных жиров) для обеспечения
+                            полного набора питательных веществ. Сбалансированный рацион с правильным сочетанием белков,
+                            жиров и углеводов поддерживает стабильный уровень сахара в крови, предотвращая усталость и
+                            «энергетические ямы». В классическом понимании сбалансированный рацион включает:
+                            10–15% калорий из белков;
+                            25–30% — из жиров;
+                            55–60% — из углеводов;
+                            адекватное количество витаминов, минералов, клетчатки и воды.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#p3">
+                            3. Качество продуктов
+                        </button>
+                    </h2>
+                    <div id="p3" class="accordion-collapse collapse" data-bs-parent="#principlesAccordion">
+                        <div class="accordion-body">
+                            Безопасность пищевых продуктов охватывает широкий спектр мероприятий: от соблюдения
+                            гигиенических норм на предприятиях пищевой промышленности до корректной маркировки продукции
+                            на упаковке. Это не просто набор рекомендуемых практик, а необходимое условие для защиты
+                            здоровья потребителей.
+                            Чем меньше обработан продукт, тем выше его пищевая ценность.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#p4">
+                            4. Учёт физической активности
+                        </button>
+                    </h2>
+                    <div id="p4" class="accordion-collapse collapse" data-bs-parent="#principlesAccordion">
+                        <div class="accordion-body">
+                            Если уровень активности высок, то потребление калорий должно быть соответствующим, чтобы
+                            организм получал достаточно энергии для выполнения физических нагрузок. В случае низкого
+                            уровня активности потребление калорий должно быть ограничено, чтобы избежать набора лишнего.
+                            Повышенная потребность в белке. Рекомендуемое количество белка в пищевом рационе спортсмена
+                            — не менее 2–2,5 г на 1 кг веса.
+                            Частота приёма пищи. При высоких физических нагрузках рекомендуется принимать пищу не менее
+                            4 раз в сутки, при этом промежутки между приёмами не должны превышать 5 часов.
+                            Время приёма пищи. Не допускается проведение напряжённой тренировки натощак, а принимать
+                            пищу можно не ранее чем через 15–20 минут по окончании тренировки.
+                            Потребность в минеральных веществах. Занятие спортом сопровождается повышенной потребностью
+                            в фосфоре, магнии, кальции, калии, железе, хлористом натрии.
+                            Потребность в витаминах. При регулярных физических нагрузках повышается потребность и в
+                            витаминах, а их дефицит существенно снижает силу и выносливость человека.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container my-5">
+            <h2 class="text-center mb-4 plate-title">Правила здоровой тарелки</h2>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="plate-card h-100">
+                        <div class="icon">🥦</div>
+                        <h5>Овощи — 50%</h5>
+                        <p>Основная часть тарелки: клетчатка, витамины, антиоксиданты. Основа для сытости и лёгкости.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="plate-card h-100">
+                        <div class="icon">🍗</div>
+                        <h5>Белок — 25%</h5>
+                        <p>Мясо, рыба, яйца, творог, бобовые. Строительный материал для мышц и иммунитета.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="plate-card h-100">
+                        <div class="icon">🌾</div>
+                        <h5>Сложные углеводы — 25%</h5>
+                        <p>Крупы, цельные злаки, картофель. Источник энергии и стабильного сахара в крови.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="plate-card h-100">
+                        <div class="icon">🥑</div>
+                        <h5>Полезные жиры — 1–2 ч.л.</h5>
+                        <p>Авокадо, оливковое масло, орехи, семена. Нужны для гормонов и усвоения витаминов.</p>
+                    </div>
+                </div>
+            </div>
+            <p class="mt-4 text-center plate-note">
+                Здоровая тарелка помогает автоматически держать сбалансированный рацион каждый день, поддерживать
+                энергию, контролировать вес и снижать риск хронических заболеваний.
+            </p>
+        </section>
+
+        <section class="container my-5">
+            <h2 class="text-center mb-4 display-6 fw-bold replace-text">Полезные альтернативы вредным продуктам</h2>
+            <div class="table-responsive">
+                <table class="table replace-table align-middle">
+                    <thead>
+                        <tr>
+                            <th class="text-center">Вредный продукт</th>
+                            <th class="text-center">Полезная альтернатива</th>
+                            <th class="text-center">Почему это лучше</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center fw-semibold">Шоколадный батончик</td>
+                            <td class="text-center">Горький шоколад 70% или финики с орехами</td>
+                            <td class="text-center">Меньше сахара, больше клетчатки и насыщения</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center fw-semibold">Молочный кофе 3-в-1</td>
+                            <td class="text-center">Кофе с молоком или капучино без сиропа</td>
+                            <td class="text-center">Без сахара и искусственных сливок</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center fw-semibold">Чипсы</td>
+                            <td class="text-center">Овощные чипсы или цельнозерновые крекеры</td>
+                            <td class="text-center">Меньше жира и соли, больше клетчатки</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center fw-semibold">Фастфуд-бургер</td>
+                            <td class="text-center">Домашний бургер с цельнозерновой булкой</td>
+                            <td class="text-center">Контроль ингредиентов и калорийности</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center fw-semibold">Сладкая газировка</td>
+                            <td class="text-center">Вода с лимоном / ягоды + газированная вода</td>
+                            <td class="text-center">Нет сахара, лучше утоляет жажду</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center fw-semibold">Мороженое пломбир</td>
+                            <td class="text-center">Греческий йогурт с ягодами</td>
+                            <td class="text-center">Больше белка, меньше сахара и жира</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="conclusion-box mt-5 p-4">
+                <h4 class="fw-bold mb-3 replace-text-aline">Важно помнить</h4>
+                <p class="replace-text">
+                    Не существует «идеальных» и «плохих» продуктов — есть только контекст, количество
+                    и потребности вашего организма. Даже сладости, чипсы или фастфуд могут быть частью
+                    сбалансированного рациона, если подходить к ним осознанно.
+                    Выбирайте то, что приносит удовольствие, и сочетайте это с заботой о теле —
+                    тогда питание станет не ограничением, а источником энергии и спокойствия.
+                </p>
+            </div>
+        </section>
+
+        <section class="container my-5">
+            <h2 class="text-center mb-4 display-6 fw-bold replace-text-aline">
+                5 самых частых ошибок в питании
+            </h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card shadow-sm gradient-card text-center p-4 h-100">
+                        <h5 class="fw-bold mb-2">Нерегулярный режим питания</h5>
+                        <p>Пропуск завтраков и поздние плотные ужины нарушают работу метаболизма и провоцируют переедание.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card shadow-sm gradient-card text-center p-4 h-100">
+                        <h5 class="fw-bold mb-2">Недостаток клетчатки</h5>
+                        <p>Недостаток овощей и цельных продуктов приводит к голоду, скачкам сахара и нарушению работы ЖКТ.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card shadow-sm gradient-card text-center p-4 h-100">
+                        <h5 class="fw-bold mb-2">Переизбыток "полезных" продуктов</h5>
+                        <p>Орехи, сухофрукты, гранола и авокадо полезны, но слишком калорийны. Избыток тормозит снижение веса.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card shadow-sm gradient-card text-center p-4 h-100">
+                        <h5 class="fw-bold mb-2">Приёмы пищи "на ходу"</h5>
+                        <p>Когда человек ест в спешке, мозг не фиксирует насыщение, и в итоге он съедает больше нормы.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card shadow-sm gradient-card text-center p-4 h-100">
+                        <h5 class="fw-bold mb-2">Чрезмерная зависимость от кофе</h5>
+                        <p>Частое употребление кофе вызывает обезвоживание, нарушения сна и повышенный аппетит.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card shadow-sm gradient-card text-center p-4 h-100">
+                        <h5 class="fw-bold mb-2">Недостаточное потребление жидкости</h5>
+                        <p>Усредненная норма потребления жидкости для взрослого человека 1,5-3 литра в сутки.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container my-5">
+            <h2 class="text-center mb-4 display-6 fw-bold replace-text">Идеи рецептов</h2>
+            <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/recipte.jpg" class="d-block w-100" alt="Рецепт 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/recipe2.jpg" class="d-block w-100" alt="Рецепт 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/recipter3.jpg" class="d-block w-100" alt="Рецепт 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/recipter4.jpg" class="d-block w-100" alt="Рецепт 4">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/recipter5.jpg" class="d-block w-100" alt="Рецепт 5">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/recipter6.jpg" class="d-block w-100" alt="Рецепт 6">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/recipter7.jpg" class="d-block w-100" alt="Рецепт 7">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#recipeCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Предыдущий</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#recipeCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Следующий</span>
+                </button>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="section-title replace-text">Калькулятор калорий</h2>
+            <div class="card p-4 shadow-sm">
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">Вес (кг)</label>
+                        <input type="number" class="form-control" id="weight">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Рост (см)</label>
+                        <input type="number" class="form-control" id="height">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Возраст</label>
+                        <input type="number" class="form-control" id="age">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Пол</label>
+                        <select class="form-select" id="gender">
+                            <option value="male">Мужчина</option>
+                            <option value="female">Женщина</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="calcCalories()">Рассчитать</button>
+                    <p class="mt-3 fw-bold" id="result"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 | <a href="index.html">Здоровый образ жизни</a></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function calcCalories() {
+            let w = +document.getElementById('weight').value;
+            let h = +document.getElementById('height').value;
+            let a = +document.getElementById('age').value;
+            let g = document.getElementById('gender').value;
+            let formula = g === 'male'
+                ? 88.36 + (13.4 * w) + (4.8 * h) - (5.7 * a)
+                : 447.6 + (9.2 * w) + (3.1 * h) - (4.3 * a);
+            document.getElementById('result').innerText = "Ваш базовый обмен: " + Math.round(formula) + " ккал";
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const burgerMenu = document.getElementById('burgerMenu');
+            const navLinks = document.getElementById('navLinks');
+            if (!burgerMenu || !navLinks) return;
+
+            const overlay = document.createElement('div');
+            overlay.className = 'overlay';
+            document.body.appendChild(overlay);
+
+            function toggleMenu() {
+                burgerMenu.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                overlay.classList.toggle('active');
+                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+            }
+
+            function closeMenu() {
+                burgerMenu.classList.remove('active');
+                navLinks.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            burgerMenu.addEventListener('click', toggleMenu);
+            overlay.addEventListener('click', closeMenu);
+            document.querySelectorAll('.nav a').forEach(link => link.addEventListener('click', closeMenu));
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+                    closeMenu();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
