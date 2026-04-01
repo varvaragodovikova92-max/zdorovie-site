@@ -1,0 +1,763 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f3f4f7;
+    color: #333;
+}
+
+/* ---------- Шапка ---------- */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, rgba(211, 220, 232, 0.95), rgba(177, 191, 210, 0.95));
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #B0C4DE;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.site-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #2f6486;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.site-title:hover {
+    opacity: 0.9;
+}
+
+/* Бургер-меню */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.burger-menu span {
+    width: 100%;
+    height: 3px;
+    background-color: #2f6486;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.burger-menu.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.burger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+.nav {
+    display: flex;
+    gap: 25px;
+}
+
+.nav a {
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    color: #5489aa;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav a:hover,
+.nav a.active {
+    background: rgba(16, 47, 79, 0.15);
+    color: #1a3d5c;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Оверлей */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ---------- ЗАГОЛОВКИ И ФОТО ---------- */
+.header-image {
+    position: relative;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 0;
+    margin-top: 0;
+    overflow: hidden;
+}
+
+.header-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/ps.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+}
+
+.page-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 45px;
+    font-weight: 700;
+    color: #2a4c7c;
+    margin: 25px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.section-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #2a4c7c;
+    margin-bottom: 25px;
+}
+
+.principle-section {
+    padding: 10px 15px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 20px auto;
+    background-color: rgba(42, 144, 255, 0.05);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    font-size: 18px;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+.intro-text {
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.7;
+    margin: 20px 50px;
+    color: #333;
+    font-weight: 400;
+}
+
+/* МОДЕЛИ */
+.models-wrapper {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    padding: 0 20px;
+}
+
+.model-box {
+    flex: 1 1 45%;
+    background: rgba(42, 144, 255, 0.05);
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.model-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+.model-box h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #2e3a59;
+    font-weight: 600;
+}
+
+.model-box p {
+    font-weight: 400;
+}
+
+.model-box ul {
+    padding-left: 20px;
+    margin: 15px 0;
+}
+
+.model-box li {
+    margin-bottom: 8px;
+    font-weight: 400;
+}
+
+.test-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 25px;
+    color: #fff;
+    background: #5489aa;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.test-btn:hover {
+    background: #3f779a;
+    transform: translateY(-2px);
+}
+
+/* ВЫВОДЫ И ПРАКТИЧЕСКИЕ РЕКОМЕНДАЦИИ */
+.psychology-conclusions {
+    padding: 0 20px;
+    margin-top: 20px;
+}
+
+.conclusion-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.conclusion-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 18px 22px;
+    background: #f6f8fc;
+    border-radius: 14px;
+    border: 1px solid #d4deef;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.conclusion-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+}
+
+.conclusion-card .icon {
+    font-size: 18px;
+    color: #5489aa;
+    margin-top: 2px;
+}
+
+.conclusion-card p {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+    line-height: 1.45;
+    font-weight: 400;
+}
+
+/* СПОРТ СЕКЦИЯ */
+.psych-sport-section {
+    padding: 40px 0;
+    background: #f7f9fc;
+    border-radius: 16px;
+    margin-top: 30px;
+}
+
+.sport-text {
+    font-size: 17px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.sport-benefits {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.sport-benefits li {
+    margin-bottom: 12px;
+    background: white;
+    padding: 12px 16px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 400;
+}
+
+.sport-benefits li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+.benefit-icon {
+    font-size: 20px;
+    min-width: 32px;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 40px auto;
+    max-width: 900px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+
+.video-wrapper iframe {
+    width: 100%;
+    height: 300px;
+    border-radius: 12px;
+}
+
+/* МЕТОДЫ САМОРЕГУЛЯЦИИ */
+.info-section {
+    padding: 40px 0;
+}
+
+.card-method {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.card-method:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+}
+
+.card-method h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2a4c7c;
+    margin-bottom: 10px;
+}
+
+.card-method p {
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.card-method a {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #5489aa;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color .3s ease;
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+.card-method a:hover {
+    background: #3f779a;
+}
+
+/* АФФИРМАЦИИ - КАРУСЕЛЬ */
+.carousel {
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-inner {
+    border-radius: 20px;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+    max-height: 500px;
+    object-fit: contain;
+    background: linear-gradient(135deg, #e8f0fa, #d4e0ec);
+    display: block;
+    margin: 0 auto;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 10%;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 50px;
+    height: 50px;
+    background-size: 50px 50px;
+}
+
+.carousel-indicators {
+    bottom: 15px;
+}
+
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 6px;
+}
+
+.carousel-indicators button.active {
+    background-color: #2a4c7c;
+}
+
+/* СОВЕТЫ ПО СНУ */
+.alt-bg {
+    background: #f3f4f7;
+}
+
+.sleep-card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    height: 100%;
+    box-shadow: 0 8px 25px rgba(42, 76, 124, 0.08);
+    border-left: 4px solid #5489aa;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.sleep-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(42, 76, 124, 0.15);
+    border-left-color: #2a4c7c;
+}
+
+.sleep-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(84, 137, 170, 0.1);
+}
+
+.sleep-card h4 {
+    color: #2a4c7c;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.sleep-card p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 16px;
+    margin: 0;
+    flex-grow: 1;
+    font-weight: 400;
+}
+
+/* ФУТЕР */
+.site-footer {
+    background-color: #e6f0ff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1rem;
+    color: #666;
+}
+
+.site-footer a {
+    color: #3f779a;
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    color: #5f7080;
+}
+
+/* ========== АДАПТИВНОСТЬ ========== */
+
+/* Планшеты и меньше (до 768px) - бургер-меню */
+@media (max-width: 768px) {
+    .burger-menu {
+        display: flex;
+    }
+
+    .nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: linear-gradient(135deg, rgba(211, 220, 232, 0.98), rgba(177, 191, 210, 0.98));
+        backdrop-filter: blur(10px);
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out;
+        border-radius: 0 0 15px 15px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav.active {
+        max-height: 500px;
+        padding: 15px 0;
+    }
+
+    .nav a {
+        display: block;
+        padding: 12px 20px;
+        text-align: center;
+        border-radius: 0;
+        font-size: 16px;
+        border-bottom: 1px solid rgba(47, 100, 134, 0.2);
+    }
+
+    .nav a:last-child {
+        border-bottom: none;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+        transform: none;
+        background: rgba(16, 47, 79, 0.25);
+        box-shadow: none;
+    }
+
+    .site-title {
+        font-size: 22px;
+    }
+
+    .logo {
+        width: 42px;
+        height: 42px;
+    }
+
+    .header {
+        padding: 12px 15px;
+    }
+
+    .header-image {
+        height: 200px;
+    }
+
+    .page-title {
+        font-size: 28px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .principle-section {
+        font-size: 14px;
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    .intro-text {
+        font-size: 14px;
+        margin: 10px;
+    }
+
+    .models-wrapper {
+        flex-direction: column;
+        padding: 0 15px;
+    }
+
+    .model-box {
+        flex: 1 1 100%;
+    }
+
+    .conclusion-card p {
+        font-size: 14px;
+    }
+
+    .sport-text {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .sport-benefits li {
+        font-size: 14px;
+    }
+
+    .video-wrapper iframe {
+        height: 200px;
+    }
+
+    .carousel-item img {
+        min-height: 280px;
+        max-height: 380px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 30px;
+        height: 30px;
+        background-size: 30px 30px;
+    }
+
+    .sleep-card {
+        padding: 20px;
+    }
+
+    .sleep-card h4 {
+        font-size: 18px;
+    }
+
+    .sleep-card p {
+        font-size: 14px;
+    }
+
+    .site-footer {
+        font-size: 12px;
+        padding: 15px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-title {
+        font-size: 16px;
+    }
+
+    .logo {
+        width: 32px;
+        height: 32px;
+    }
+
+    .header-image {
+        height: 150px;
+    }
+
+    .page-title {
+        font-size: 22px;
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    .principle-section {
+        font-size: 13px;
+    }
+
+    .intro-text {
+        font-size: 13px;
+    }
+
+    .model-box h3 {
+        font-size: 18px;
+    }
+
+    .conclusion-card p {
+        font-size: 13px;
+    }
+
+    .sport-text {
+        font-size: 13px;
+    }
+
+    .sport-benefits li {
+        font-size: 13px;
+    }
+
+    .video-wrapper iframe {
+        height: 180px;
+    }
+
+    .carousel-item img {
+        min-height: 200px;
+        max-height: 280px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 25px;
+        height: 25px;
+        background-size: 25px 25px;
+    }
+
+    .sleep-card {
+        padding: 15px;
+    }
+
+    .sleep-icon {
+        font-size: 32px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .sleep-card h4 {
+        font-size: 16px;
+    }
+
+    .sleep-card p {
+        font-size: 13px;
+    }
+}

@@ -1,0 +1,948 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f3f4f7;
+    color: #333;
+}
+
+/* ---------- ШАПКА (как на главной) ---------- */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, rgba(211, 220, 232, 0.95), rgba(177, 191, 210, 0.95));
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #B0C4DE;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.site-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #2f6486;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.site-title:hover {
+    opacity: 0.9;
+}
+
+/* Бургер-меню */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.burger-menu span {
+    width: 100%;
+    height: 3px;
+    background-color: #2f6486;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.burger-menu.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.burger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+.nav {
+    display: flex;
+    gap: 25px;
+}
+
+.nav a {
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    color: #5489aa;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav a:hover,
+.nav a.active {
+    background: rgba(16, 47, 79, 0.15);
+    color: #1a3d5c;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.header-space {
+    height: 95px;
+}
+
+/* Оверлей */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ---------- ЗАГОЛОВКИ ---------- */
+.header-image {
+    position: relative;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 0;
+    margin-top: -5px;
+    overflow: hidden;
+}
+
+.header-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/food.fon.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+}
+
+.page-title {
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    font-size: 45px;
+    color: #2a4c7c;
+    margin: 25px 0;
+}
+
+.principle-section {
+    padding: 10px 15px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 40px auto;
+    background-color: rgba(42, 144, 255, 0.05);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #2a4c7c;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* ТАРЕЛКА */
+.plate-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2a4c7c;
+    position: relative;
+}
+
+.plate-title::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background: #2a4c7c;
+    border-radius: 2px;
+    display: block;
+    margin: 10px auto 0;
+}
+
+.plate-card {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(6px);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.plate-card .icon {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.plate-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.plate-note {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.05rem;
+    color: #3a506b;
+    line-height: 1.6;
+}
+
+/* ТАБЛИЦА */
+.replace-text {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: #35527a;
+}
+
+.replace-text::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background: #2a4c7c;
+    border-radius: 2px;
+    display: block;
+    margin: 10px auto 0;
+}
+
+.replace-table tbody tr {
+    background: #f8fbff;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    transition: 0.25s ease;
+}
+
+.replace-table tbody td {
+    padding: 18px 22px;
+}
+
+.replace-table tbody tr:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+    background: #eef5ff;
+}
+
+.replace-table thead th {
+    background: #e8f0fa;
+    color: #35527a;
+    border: none;
+    padding: 16px;
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.conclusion-box {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.05rem;
+    color: #3a506b;
+    line-height: 1.6;
+}
+
+.replace-text-aline {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: #35527a;
+    margin: 0 0 20px 0;
+}
+
+/* 5 ФАКТОВ */
+.gradient-card {
+    border-radius: 16px;
+    background: linear-gradient(145deg, #d3dde7, #b4d0e9);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gradient-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+.gradient-card h5 {
+    font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.gradient-card p {
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+/* Рецепты - как в оригинале */
+/* Карусель - как на страницах психология и спорт */
+.carousel {
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-inner {
+    border-radius: 20px;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+    max-height: 500px;
+    object-fit: contain;
+    background: linear-gradient(135deg, #e8f0fa, #d4e0ec);
+    display: block;
+    margin: 0 auto;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 10%;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 50px;
+    height: 50px;
+    background-size: 50px 50px;
+}
+
+.carousel-indicators {
+    bottom: 15px;
+}
+
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 6px;
+}
+
+.carousel-indicators button.active {
+    background-color: #2a4c7c;
+}
+
+/* Адаптивность карусели */
+@media (max-width: 992px) {
+    .carousel-item img {
+        min-height: 350px;
+        max-height: 450px;
+    }
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 40px;
+        height: 40px;
+        background-size: 40px 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-item img {
+        min-height: 280px;
+        max-height: 380px;
+    }
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 30px;
+        height: 30px;
+        background-size: 30px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-item img {
+        min-height: 200px;
+        max-height: 280px;
+    }
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 25px;
+        height: 25px;
+        background-size: 25px 25px;
+    }
+}
+
+/* ---Footer--- */
+.site-footer {
+    background-color: #e6f0ff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1rem;
+    color: #666;
+}
+
+.site-footer a {
+    color: #3f779a;
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    color: #5f7080;
+}
+
+/* ========== АДАПТИВНОСТЬ ========== */
+
+/* ========== АДАПТИВНОСТЬ ========== */
+
+/* Планшеты (до 992px) - меню горизонтальное, бургер не показываем */
+@media (max-width: 992px) {
+    .burger-menu {
+        display: none;
+    }
+
+    .nav {
+        display: flex;
+        gap: 15px;
+        position: static;
+        max-height: none;
+        background: transparent;
+        backdrop-filter: none;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .nav a {
+        display: inline-block;
+        padding: 8px 12px;
+        font-size: 16px;
+        border-bottom: none;
+    }
+
+    .site-title {
+        font-size: 22px;
+    }
+
+    .logo {
+        width: 42px;
+        height: 42px;
+    }
+
+    .page-title {
+        font-size: 32px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .principle-section {
+        font-size: 16px;
+        margin: 20px auto;
+    }
+
+    .plate-title {
+        font-size: 28px;
+    }
+
+    .carousel-item img {
+        height: 300px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 40px;
+        height: 40px;
+        background-size: 40px 40px;
+    }
+}
+
+/* Телефоны (до 768px) - появляется бургер, меню вертикальное */
+@media (max-width: 768px) {
+    .burger-menu {
+        display: flex;
+    }
+
+    .nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: linear-gradient(135deg, rgba(211, 220, 232, 0.98), rgba(177, 191, 210, 0.98));
+        backdrop-filter: blur(10px);
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+        border-radius: 0 0 20px 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .nav.active {
+        max-height: 400px;
+        padding: 15px 0;
+    }
+
+    .nav a {
+        display: block;
+        padding: 15px 20px;
+        font-size: 16px;
+        text-align: center;
+        border-radius: 0;
+        border-bottom: 1px solid rgba(42, 76, 124, 0.2);
+    }
+
+    .nav a:last-child {
+        border-bottom: none;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+        background: rgba(16, 47, 79, 0.25);
+        transform: none;
+        box-shadow: none;
+    }
+
+    .site-title {
+        font-size: 18px;
+    }
+
+    .logo {
+        width: 36px;
+        height: 36px;
+    }
+
+    .header {
+        padding: 12px 15px;
+    }
+
+    .header-space {
+        height: 75px;
+    }
+
+    .header-image {
+        height: 200px;
+    }
+
+    .page-title {
+        font-size: 24px;
+    }
+
+    .section-title {
+        font-size: 22px;
+    }
+
+    .principle-section {
+        font-size: 14px;
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    .plate-title {
+        font-size: 24px;
+    }
+
+    .plate-card {
+        padding: 15px;
+    }
+
+    .plate-card .icon {
+        font-size: 1.8rem;
+    }
+
+    .plate-card h5 {
+        font-size: 16px;
+    }
+
+    .plate-card p {
+        font-size: 13px;
+    }
+
+    .plate-note {
+        font-size: 14px;
+    }
+
+    .replace-table thead th,
+    .replace-table tbody td {
+        padding: 10px 8px;
+        font-size: 12px;
+    }
+
+    .conclusion-box {
+        padding: 15px !important;
+    }
+
+    .conclusion-box h4 {
+        font-size: 18px;
+    }
+
+    .conclusion-box p {
+        font-size: 14px;
+    }
+
+    .gradient-card {
+        padding: 15px !important;
+    }
+
+    .gradient-card h5 {
+        font-size: 16px;
+    }
+
+    .gradient-card p {
+        font-size: 13px;
+    }
+
+    .carousel-item img {
+        height: 200px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 30px;
+        height: 30px;
+        background-size: 30px 30px;
+    }
+
+    .carousel-indicators button {
+        width: 8px;
+        height: 8px;
+        margin: 0 4px;
+    }
+
+    .card {
+        padding: 15px !important;
+    }
+
+    .site-footer {
+        font-size: 12px;
+        padding: 15px 0;
+    }
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+/* Маленькие телефоны (до 480px) */
+@media (max-width: 480px) {
+    .site-title {
+        font-size: 16px;
+    }
+
+    .logo {
+        width: 32px;
+        height: 32px;
+    }
+
+    .page-title {
+        font-size: 20px;
+    }
+
+    .section-title {
+        font-size: 18px;
+    }
+
+    .principle-section {
+        font-size: 13px;
+    }
+
+    .plate-title {
+        font-size: 20px;
+    }
+
+    .replace-table thead th,
+    .replace-table tbody td {
+        padding: 8px 5px;
+        font-size: 10px;
+    }
+
+    .gradient-card h5 {
+        font-size: 14px;
+    }
+
+    .gradient-card p {
+        font-size: 12px;
+    }
+
+    .carousel-item img {
+        height: 150px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 25px;
+        height: 25px;
+        background-size: 25px 25px;
+    }
+
+    .accordion-button {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .accordion-body {
+        font-size: 13px;
+        padding: 12px;
+    }
+}
+
+/* ========== АДАПТИВНОСТЬ ШАПКИ (как на главной) ========== */
+
+/* Планшеты и меньше (до 768px) - бургер-меню */
+@media (max-width: 768px) {
+    .burger-menu {
+        display: flex;
+    }
+
+    .nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: linear-gradient(135deg, rgba(211, 220, 232, 0.98), rgba(177, 191, 210, 0.98));
+        backdrop-filter: blur(10px);
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out;
+        border-radius: 0 0 15px 15px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav.active {
+        max-height: 500px;
+        padding: 15px 0;
+    }
+
+    .nav a {
+        display: block;
+        padding: 12px 20px;
+        text-align: center;
+        border-radius: 0;
+        font-size: 16px;
+        border-bottom: 1px solid rgba(47, 100, 134, 0.2);
+    }
+
+    .nav a:last-child {
+        border-bottom: none;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+        transform: none;
+        background: rgba(16, 47, 79, 0.25);
+        box-shadow: none;
+    }
+
+    .site-title {
+        font-size: 22px;
+    }
+
+    .logo {
+        width: 42px;
+        height: 42px;
+    }
+
+    .header {
+        padding: 12px 15px;
+    }
+
+    .header-space {
+        height: 80px;
+    }
+}
+
+/* Остальная адаптивность для контента */
+@media (max-width: 992px) {
+    .page-title {
+        font-size: 32px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .principle-section {
+        font-size: 16px;
+        margin: 20px auto;
+    }
+
+    .plate-title {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-title {
+        font-size: 18px;
+    }
+
+    .logo {
+        width: 36px;
+        height: 36px;
+    }
+
+    .page-title {
+        font-size: 24px;
+    }
+
+    .section-title {
+        font-size: 22px;
+    }
+
+    .principle-section {
+        font-size: 14px;
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    .plate-title {
+        font-size: 24px;
+    }
+
+    .plate-card {
+        padding: 15px;
+    }
+
+    .plate-card .icon {
+        font-size: 1.8rem;
+    }
+
+    .plate-card h5 {
+        font-size: 16px;
+    }
+
+    .plate-card p {
+        font-size: 13px;
+    }
+
+    .replace-table thead th,
+    .replace-table tbody td {
+        padding: 10px 8px;
+        font-size: 12px;
+    }
+
+    .conclusion-box {
+        padding: 15px !important;
+    }
+
+    .gradient-card {
+        padding: 15px !important;
+    }
+
+    .gradient-card h5 {
+        font-size: 16px;
+    }
+
+    .gradient-card p {
+        font-size: 13px;
+    }
+
+    .site-footer {
+        font-size: 12px;
+        padding: 15px 0;
+    }
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-title {
+        font-size: 16px;
+    }
+
+    .logo {
+        width: 32px;
+        height: 32px;
+    }
+
+    .page-title {
+        font-size: 20px;
+    }
+
+    .section-title {
+        font-size: 18px;
+    }
+
+    .principle-section {
+        font-size: 13px;
+    }
+
+    .plate-title {
+        font-size: 20px;
+    }
+
+    .replace-table thead th,
+    .replace-table tbody td {
+        padding: 8px 5px;
+        font-size: 10px;
+    }
+
+    .gradient-card h5 {
+        font-size: 14px;
+    }
+
+    .gradient-card p {
+        font-size: 12px;
+    }
+
+    .accordion-button {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .accordion-body {
+        font-size: 13px;
+        padding: 12px;
+    }
+}

@@ -1,0 +1,756 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f3f4f7;
+    color: #333;
+}
+
+/* ---------- ШАПКА (как на главной) ---------- */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, rgba(211, 220, 232, 0.95), rgba(177, 191, 210, 0.95));
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #B0C4DE;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.site-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #2f6486;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.site-title:hover {
+    opacity: 0.9;
+}
+
+/* Бургер-меню */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.burger-menu span {
+    width: 100%;
+    height: 3px;
+    background-color: #2f6486;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.burger-menu.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.burger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+.nav {
+    display: flex;
+    gap: 25px;
+}
+
+.nav a {
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    color: #5489aa;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav a:hover,
+.nav a.active {
+    background: rgba(16, 47, 79, 0.15);
+    color: #1a3d5c;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.header-space {
+    height: 95px;
+}
+
+/* Оверлей */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ---------- ВИДЕО ---------- */
+.header-video {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+
+.header-video .video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 0;
+}
+
+h1.display-4 {
+    font-family: 'Roboto', sans-serif;
+    color: #1f4c7c;
+    margin-top: -135px;
+}
+
+h2.fw-bold {
+    font-family: 'Roboto', sans-serif;
+    color: #1f4c7c;
+    margin-bottom: -40px;
+    border-bottom: 2px solid #1f4c7c;
+    padding-bottom: 0.5rem;
+}
+
+.principle-section {
+    padding: 10px 15px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 40px auto;
+    background-color: rgba(42, 144, 255, 0.05);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+/* СТАКАНЫ */
+.glass-wrapper {
+    display: flex;
+    border-radius: 12px;
+    width: 100px;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-wrapper:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
+}
+
+.glass {
+    width: 60px;
+    height: 150px;
+    border: 3px solid #4ca6ff;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    background: #e0f7ff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+@keyframes water-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.glass:hover .water {
+    animation: water-bounce 0.6s ease-in-out;
+}
+
+.water {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transition: height 0.6s ease;
+}
+
+.water.children {
+    height: 43%;
+    background: linear-gradient(to top, #4ca6ff, #8dd4ff);
+}
+
+.water.adults {
+    height: 71%;
+    background: linear-gradient(to top, #4ca6ff, #8dd4ff);
+}
+
+.water.athletes {
+    height: 100%;
+    background: linear-gradient(to top, #4ca6ff, #8dd4ff);
+}
+
+.glass-wrapper p {
+    font-family: 'Roboto', sans-serif;
+    color: #2a4c7c;
+    font-weight: 500;
+    text-align: center;
+    margin: 5px 0 0;
+}
+
+.replace-text-aline {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: #35527a;
+    margin: 0 0 20px 0;
+}
+
+.conclusion-box {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.05rem;
+    color: #3a506b;
+    line-height: 1.6;
+}
+
+/* СЕКЦИИ */
+.water-role {
+    background: rgba(42, 144, 255, 0.05);
+    padding: 50px 0;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.water-role:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+}
+
+.water-role img {
+    max-width: 80%;
+    height: auto;
+}
+
+.bold {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin: 20px;
+    margin-top: -30px;
+    border-bottom: 2px solid #1f4c7c;
+    padding-bottom: 0.5rem;
+}
+
+/* АККОРДЕОН */
+.hydration-tips {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 20px;
+    color: #1a3d5c;
+}
+
+.accordion .item {
+    margin-bottom: 12px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #dbe2e8;
+    background: #ffffff;
+    transition: box-shadow 0.3s ease;
+}
+
+.accordion input {
+    display: none;
+}
+
+.accordion .title {
+    display: block;
+    padding: 18px 20px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    background: #f4f8fb;
+    transition: background-color 0.3s;
+}
+
+.accordion .title:hover {
+    background: #e7eff5;
+}
+
+.accordion .content {
+    max-height: 0;
+    padding: 0 20px;
+    overflow: hidden;
+    font-size: 17px;
+    line-height: 1.55;
+    color: #333;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.accordion input:checked ~ .content {
+    max-height: 300px;
+    padding: 15px 20px 20px;
+}
+
+.accordion input:checked ~ .title {
+    background: #e7eff5;
+}
+
+/* ПРИЛОЖЕНИЯ */
+.water-apps {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.water-apps h2 {
+    font-family: 'Roboto', sans-serif;
+    color: #1f4c7c;
+    margin: 25px;
+    margin-top: -80px;
+    border-bottom: 2px solid #1f4c7c;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.apps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.app-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.app-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.app-card h3 {
+    font-size: 22px;
+    color: #1b4d6e;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.app-card p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.app-card a {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #1b4d6e;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color .3s ease;
+}
+
+.app-card a:hover {
+    background: #163c55;
+}
+
+/* КАЛЬКУЛЯТОР */
+.water-calc-section {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.water-calc-container {
+    max-width: 800px;
+    width: 100%;
+}
+
+.bold-title {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin: 20px;
+    margin-top: -30px;
+    border-bottom: 2px solid #1f4c7c;
+    padding-bottom: 0.5rem;
+    color: #163c55;
+    display: inline-block;
+    width: auto;
+}
+
+.calc-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    transition: transform .3s ease;
+}
+
+.calc-card:hover {
+    transform: translateY(-5px);
+}
+
+.calc-input {
+    padding: 12px 15px;
+    border: 1px solid #dcdcdc;
+    border-radius: 12px;
+    outline: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.calc-input:focus {
+    border-color: #66b2ff;
+    box-shadow: 0 0 10px rgba(102,178,255,0.2);
+}
+
+.calc-btn {
+    margin-top: 10px;
+    padding: 14px;
+    background: #4da3ff;
+    border: none;
+    color: #fff;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.calc-btn:hover {
+    background: #1a8cff;
+    transform: translateY(-2px);
+}
+
+.calc-result-box {
+    margin-top: 20px;
+    background: #f0f7ff;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #cfe4ff;
+}
+
+.calc-result-text {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* ФУТЕР */
+.site-footer {
+    background-color: #e6f0ff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1rem;
+    color: #666;
+}
+
+.site-footer a {
+    color: #3f779a;
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    color: #5f7080;
+}
+
+/* ========== АДАПТИВНОСТЬ ========== */
+
+/* Планшеты и меньше (до 768px) - бургер-меню */
+@media (max-width: 768px) {
+    .burger-menu {
+        display: flex;
+    }
+
+    .nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: linear-gradient(135deg, rgba(211, 220, 232, 0.98), rgba(177, 191, 210, 0.98));
+        backdrop-filter: blur(10px);
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out;
+        border-radius: 0 0 15px 15px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav.active {
+        max-height: 500px;
+        padding: 15px 0;
+    }
+
+    .nav a {
+        display: block;
+        padding: 12px 20px;
+        text-align: center;
+        border-radius: 0;
+        font-size: 16px;
+        border-bottom: 1px solid rgba(47, 100, 134, 0.2);
+    }
+
+    .nav a:last-child {
+        border-bottom: none;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+        transform: none;
+        background: rgba(16, 47, 79, 0.25);
+        box-shadow: none;
+    }
+
+    .site-title {
+        font-size: 22px;
+    }
+
+    .logo {
+        width: 42px;
+        height: 42px;
+    }
+
+    .header {
+        padding: 12px 15px;
+    }
+
+    .header-space {
+        height: 80px;
+    }
+
+    .header-video {
+        height: 200px;
+    }
+
+    h1.display-4 {
+        font-size: 24px;
+        margin-top: -60px;
+    }
+
+    .principle-section {
+        font-size: 14px;
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    h2.fw-bold {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .glass-wrapper {
+        width: 80px;
+    }
+
+    .glass {
+        width: 50px;
+        height: 120px;
+    }
+
+    .apps-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .water-apps h2 {
+        font-size: 24px;
+        margin: 0 0 25px 0;
+    }
+
+    .bold-title {
+        font-size: 22px;
+    }
+
+    .calc-card {
+        padding: 20px;
+    }
+
+    .site-footer {
+        font-size: 12px;
+        padding: 15px 0;
+    }
+}
+
+/* Остальная адаптивность */
+@media (max-width: 992px) {
+    .page-title {
+        font-size: 32px;
+    }
+
+    .principle-section {
+        font-size: 16px;
+        margin: 20px auto;
+    }
+
+    .apps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .site-title {
+        font-size: 16px;
+    }
+
+    .logo {
+        width: 32px;
+        height: 32px;
+    }
+
+    h1.display-4 {
+        font-size: 20px;
+        margin-top: -40px;
+    }
+
+    .principle-section {
+        font-size: 13px;
+    }
+
+    h2.fw-bold {
+        font-size: 18px;
+    }
+
+    .glass-wrapper {
+        width: 70px;
+    }
+
+    .glass {
+        width: 45px;
+        height: 100px;
+    }
+
+    .bold-title {
+        font-size: 18px;
+    }
+
+    .calc-input {
+        font-size: 14px;
+    }
+
+    .calc-btn {
+        font-size: 16px;
+    }
+}
+/* ---------- ВИДЕО (прижато к шапке) ---------- */
+.header-video {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.header-video .video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* Заголовок страницы - видимый */
+.page-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 45px;
+    font-weight: 700;
+    color: #2a4c7c;
+    margin: 25px 0;
+    position: relative;
+    z-index: 2;
+}
+
+h1.display-4 {
+    font-family: 'Roboto', sans-serif;
+    color: #1f4c7c;
+    margin: 20px 0;
+}
+
+/* Убираем лишние отступы между абзацами */
+.principle-section p,
+.water-role p,
+.conclusion-box p {
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+.principle-section p:last-child,
+.water-role p:last-child,
+.conclusion-box p:last-child {
+    margin-bottom: 0;
+}
+
+/* Расстояние между абзацами в секциях */
+.water-role .row .col-md-6 p {
+    margin-bottom: 0.8rem;
+}
+
+.water-role .row .col-md-6 p.mt-3 {
+    margin-top: 0.8rem;
+}
